@@ -4,7 +4,7 @@ services:
     image: ghcr.io/hotio/cloudflareddns
     restart: unless-stopped
     env_file:
-      - stack.env
+      - ./stack.env
     environment:
       - PUID=1000
       - PGID=1000
