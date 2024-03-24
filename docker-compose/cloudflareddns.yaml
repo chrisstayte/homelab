@@ -3,8 +3,9 @@ services:
     container_name: cloudflareddns
     image: ghcr.io/hotio/cloudflareddns
     restart: unless-stopped
-    environment:
+    env_file:
       - stack.env
+    environment:
       - PUID=1000
       - PGID=1000
       - UMASK=002
