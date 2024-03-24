@@ -1,6 +1,6 @@
 services:
   cloudflareddns:
-    container_name: cloudflareddns2
+    container_name: cloudflareddns
     image: ghcr.io/hotio/cloudflareddns
     restart: unless-stopped
     environment:
