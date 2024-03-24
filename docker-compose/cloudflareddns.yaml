@@ -4,6 +4,7 @@ services:
     image: ghcr.io/hotio/cloudflareddns
     restart: unless-stopped
     environment:
+      - stack.env
       - PUID=1000
       - PGID=1000
       - UMASK=002
@@ -17,5 +18,6 @@ services:
       - CF_HOSTS=phatdisk.com;uptime.chrisstayte.com;tautulli.chrisstayte.com;speedtest.chrisstayte.com;portainer.chrisstayte.com;vpn.chrisstayte.com;serverstatus.chrisstayte.com;pastebin.chrisstayte.com
       - CF_ZONES=phatdisk.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com
       - CF_RECORDTYPES=A;A;A;A;A;A;A;A
+      
     volumes:
       - /server/cloudflareddns:/config
