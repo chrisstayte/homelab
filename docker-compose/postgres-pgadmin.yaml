@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  postgres:
+    container_name: postgres
+    image: postgres
+    volumes:
+      - /server/postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    restart: unless-stopped
+    env_file:
+      - ../stack.env
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: unless-stopped
+    user: '1000:1000' # needed for user permissions
+    ports:
+      - '8888:80'
+    volumes:
+      - /server/pgadmin:/var/lib/pgadmin
+    env_file:
+      - ../stack.env
