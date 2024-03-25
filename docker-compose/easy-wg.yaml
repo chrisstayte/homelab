@@ -1,10 +1,10 @@
 version: '3.8'
 volumes:
   etc_wireguard:
-
 services:
   wg-easy:
-    environment:
+    env_file:
+      - ../stack.env
     image: ghcr.io/wg-easy/wg-easy
     container_name: vpn
     volumes:
