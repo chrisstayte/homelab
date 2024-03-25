@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  microbin:
+    container_name: microbin
+    image: danielszabo99/microbin
+    ports:
+      - '5980:8080'
+    volumes:
+      - '/server/microbin:/app/microbin_data'
+    restart: unless-stopped
+    env_file:
+      - ../stack.env

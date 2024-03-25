@@ -5,20 +5,5 @@ services:
     restart: unless-stopped
     env_file:
       - ../stack.env
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - UMASK=002
-      - TZ=Etc/UTC
-      - INTERVAL=300
-      - DETECTION_MODE=dig-whoami.cloudflare
-      - LOG_LEVEL=3
-      - CF_USER
-      - CF_APIKEY
-      - CF_APITOKEN_ZONE
-      - CF_HOSTS=phatdisk.com;uptime.chrisstayte.com;tautulli.chrisstayte.com;speedtest.chrisstayte.com;portainer.chrisstayte.com;vpn.chrisstayte.com;serverstatus.chrisstayte.com;pastebin.chrisstayte.com
-      - CF_ZONES=phatdisk.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com;chrisstayte.com
-      - CF_RECORDTYPES=A;A;A;A;A;A;A;A
-      
     volumes:
       - /server/cloudflareddns:/config
