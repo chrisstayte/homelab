@@ -11,9 +11,8 @@ services:
       - '53:53/udp'
       # - '67:67/udp' # Only required if you are using Pi-hole as your DHCP server
       - '8181:80/tcp'
-    environment:
-      TZ: 'America/Chicago'
-      # WEBPASSWORD: 'set a secure password here or it will be random'
+    env_file:
+      - ../stack.env
     # Volumes store your data between container upgrades
     volumes:
       - '/server/pihole/etc-pihole:/etc/pihole'
