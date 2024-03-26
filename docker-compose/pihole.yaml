@@ -10,8 +10,7 @@ services:
       - '53:53/tcp'
       - '53:53/udp'
       # - '67:67/udp' # Only required if you are using Pi-hole as your DHCP server
-      - '8181:80/tcp'
-    environment: []
+      - '8099:80/tcp'
     env_file:
       - ../stack.env
     # Volumes store your data between container upgrades
