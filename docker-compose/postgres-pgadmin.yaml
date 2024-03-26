@@ -14,7 +14,7 @@ services:
     image: dpage/pgadmin4
     container_name: pgadmin
     restart: unless-stopped
-    user: '1000:1000' # needed for user permissions
+    user: '$UID:$GID' # needed for user permissions
     ports:
       - '8888:80'
     volumes:
