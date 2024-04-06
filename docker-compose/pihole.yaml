@@ -5,15 +5,18 @@ services:
   pihole:
     container_name: pihole
     image: pihole/pihole:latest
+    pull_policy: always
     # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
     ports:
       - '53:53/tcp'
       - '53:53/udp'
-      # - '67:67/udp' # Only required if you are using Pi-hole as your DHCP server
-      - '8099:80/tcp'
-    env_file:
-      - ../stack.env
-    # Volumes store your data between container upgrades
+      - '80:80/tcp'
+    environment:
+      TZ: 'America/Chicago'
+      WEBPASSWORD: 8ivNNMEpRgxUjPUyT_**
+      DNSMASQ_LISTENING: all
+      FTLCONF_LOCAL: 10.0.0.9
+      PIHOLE_DNS: 1.1.1.1;1.0.0.1
     volumes:
       - '/server/pihole/etc-pihole:/etc/pihole'
       - '/server/pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
