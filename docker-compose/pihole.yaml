@@ -10,7 +10,7 @@ services:
     ports:
       - '53:53/tcp'
       - '53:53/udp'
-      - '80:80/tcp'
+      - '8099:80/tcp'
     env_file:
       - ../stack.env
     volumes:
