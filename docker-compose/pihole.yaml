@@ -11,12 +11,8 @@ services:
       - '53:53/tcp'
       - '53:53/udp'
       - '80:80/tcp'
-    environment:
-      TZ: 'America/Chicago'
-      WEBPASSWORD: 8ivNNMEpRgxUjPUyT_**
-      DNSMASQ_LISTENING: all
-      FTLCONF_LOCAL: 10.0.0.9
-      PIHOLE_DNS: 1.1.1.1;1.0.0.1
+    env_file:
+      - ../stack.env
     volumes:
       - '/server/pihole/etc-pihole:/etc/pihole'
       - '/server/pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
