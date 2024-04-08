@@ -1,9 +1,0 @@
-services:
-  cloudflareddns:
-    container_name: cloudflareddns
-    image: ghcr.io/hotio/cloudflareddns
-    restart: unless-stopped
-    env_file:
-      - ../stack.env
-    volumes:
-      - /server/cloudflareddns:/config
