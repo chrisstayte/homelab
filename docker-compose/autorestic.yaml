@@ -1,0 +1,13 @@
+oaservices:
+  autorestic:
+    container_name: 'autorestic'
+    image: 'cupcakearmy/autorestic:latest'
+    command: 'autorestic backup -va -c /data/.autorestic.yaml'
+    environment:
+      PUID: 1000
+      PGID: 1000
+    volumes:
+      - '/server/autorestic:/data'
+      - '/server:/server'
+      - '{USERHOME}/.ssh/id_rsa:/root/.ssh/id_rsa:ro'
+      - '{USERHOME}/.ssh/known_hosts:/root/.ssh/known_hosts:ro'
