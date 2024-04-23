@@ -1,4 +1,4 @@
-oaservices:
+services:
   autorestic:
     container_name: 'autorestic'
     image: 'cupcakearmy/autorestic:latest'
