@@ -1,8 +1,9 @@
 version: '3.3'
 services:
   kiwix-serve:
+    container_name: kiwix
     ports:
-      - 8080:8080
+      - 8000:8080
     image: ghcr.io/kiwix/kiwix-serve:latest
     # uncomment next 4 lines to use it with local zim file in /tmp/zim
     volumes:
