@@ -1,0 +1,8 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - '1110:80'
+    volumes:
+      - /server/websites/chrisstayte.app:/usr/share/nginx/html:ro
+    restart: unless-stopped
