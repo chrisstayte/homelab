@@ -1,6 +1,7 @@
 services:
   nginx:
     image: nginx:latest
+    container_name: nginx-chrisstayte-com
     ports:
       - '1111:80'
     volumes:

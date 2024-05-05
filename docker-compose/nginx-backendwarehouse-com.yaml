@@ -1,6 +1,7 @@
 services:
   nginx:
     image: nginx:latest
+    container_name: nginx-backendwarehouse-com
     ports:
       - '1112:80'
     volumes:
