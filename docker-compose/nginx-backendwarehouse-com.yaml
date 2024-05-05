@@ -2,7 +2,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - '1111:80'
+      - '1112:80'
     volumes:
       - /server/websites/backendwarehouse.com:/usr/share/nginx/html:ro
     restart: unless-stopped
