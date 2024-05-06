@@ -1,6 +1,7 @@
 version: '3.3'
 services:
   kiwix-serve:
+    restart: unless-stopped
     container_name: kiwix
     ports:
       - 8000:8080
