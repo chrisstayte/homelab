@@ -5,5 +5,9 @@ services:
     image: mysql
     container_name: mysql
     restart: unless-stopped
+    ports:
+      - '3306:3306'
+    volumes:
+      - /server/mysql:/var/lib/mysql
     env_file:
       - ../stack.env
