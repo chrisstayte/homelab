@@ -9,6 +9,7 @@ networks:
 services:
   calcom:
     image: calcom.docker.scarf.sh/calcom/cal.com
+    container_name: calcom
     build:
       context: .
       dockerfile: Dockerfile
@@ -32,6 +33,7 @@ services:
   # Optional use of Prisma Studio. In production, comment out or remove the section below to prevent unwanted access to your database.
   studio:
     image: calcom.docker.scarf.sh/calcom/cal.com
+    container_name: prismstudio
     restart: unless-stopped
     networks:
       - stack
