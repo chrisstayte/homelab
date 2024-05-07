@@ -1,0 +1,46 @@
+# Use postgres/example user/password credentials
+version: '3.8'
+
+networks:
+  stack:
+    name: stack
+    external: false
+
+services:
+  calcom:
+    image: calcom.docker.scarf.sh/calcom/cal.com
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_WEBAPP_URL: ${NEXT_PUBLIC_WEBAPP_URL}
+        NEXT_PUBLIC_LICENSE_CONSENT: ${NEXT_PUBLIC_LICENSE_CONSENT}
+        CALCOM_TELEMETRY_DISABLED: ${CALCOM_TELEMETRY_DISABLED}
+        NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+        CALENDSO_ENCRYPTION_KEY: ${CALENDSO_ENCRYPTION_KEY}
+        DATABASE_URL: ${DATABASE_URL}
+        DATABASE_DIRECT_URL: ${DATABASE_URL}
+      network: stack
+    restart: unless-stopped
+    networks:
+      - stack
+    ports:
+      - 3333:3000
+    env_file:
+      - ../stack.env
+
+  # Optional use of Prisma Studio. In production, comment out or remove the section below to prevent unwanted access to your database.
+  studio:
+    image: calcom.docker.scarf.sh/calcom/cal.com
+    restart: unless-stopped
+    networks:
+      - stack
+    ports:
+      - 5555:5555
+    env_file:
+      - ../stack.env
+    command:
+      - npx
+      - prisma
+      - studio
+# END SECTION: Optional use of Prisma Studio.
