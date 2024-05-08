@@ -1,0 +1,6 @@
+version: '2'
+services:
+  heimdall:
+    image: linuxserver/heimdall:2.6.1
+    container_name: heimdall
+    restart: unless-stopped
