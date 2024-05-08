@@ -4,6 +4,9 @@ services:
     tty: true
     restart: unless-stopped
     container_name: n8n
+    environment:
+      PUID: 1000
+      PGID: 1000
     ports:
       - 5678:5678
     volumes:
