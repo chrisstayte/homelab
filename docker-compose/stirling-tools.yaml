@@ -1,6 +1,7 @@
 version: '3.3'
 services:
   stirling-pdf:
+    container_name: stirling-pdf
     image: frooodle/s-pdf:latest
     ports:
       - '8877:8080'
@@ -13,3 +14,6 @@ services:
       - DOCKER_ENABLE_SECURITY=false
       - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
       - LANGS=en_GB
+      - UI_APP_NAME=PDF
+      - UI_HOME_DESCRIPTION=Manipulate PDF's for free.
+      - UI_APP_NAVBAR_NAME= PDF
