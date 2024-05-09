@@ -14,6 +14,6 @@ services:
       - DOCKER_ENABLE_SECURITY=false
       - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
       - LANGS=en_GB
-      - UI_APP_NAME=PDF
+      - UI_APP_NAME=PDF Manipuulator
       - UI_HOME_DESCRIPTION=Manipulate PDF's for free.
-      - UI_APP_NAVBAR_NAME= PDF
+      - UI_APP_NAVBAR_NAME=PDF
