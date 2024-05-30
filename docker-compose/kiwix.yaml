@@ -8,7 +8,7 @@ services:
     image: ghcr.io/kiwix/kiwix-serve:latest
     # uncomment next 4 lines to use it with local zim file in /tmp/zim
     volumes:
-      - /mnt/synology/kiwix/data:/data
+      - /mnt/local-storage/kiwix/data:/data
     command:
       - '*.zim'
     # uncomment next 2 lines to use it with remote zim file
