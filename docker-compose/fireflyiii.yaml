@@ -1,0 +1,11 @@
+services:
+  app:
+    image: fireflyiii/core:latest
+    container_name: firefly_iii_core
+    restart: always
+    volumes:
+      - server/firefly_iii_upload:/var/www/html/storage/upload
+    env_file:
+      - ../stack.env
+    ports:
+      - 1111:8080
