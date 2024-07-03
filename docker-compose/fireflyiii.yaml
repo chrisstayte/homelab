@@ -8,4 +8,4 @@ services:
     env_file:
       - ../stack.env
     ports:
-      - 1111:8080
+      - 4873:8080
