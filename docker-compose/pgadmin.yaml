@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: unless-stopped
+    user: '$UID:$GID' # needed for user permissions
+    ports:
+      - '8888:80'
+    volumes:
+      - /server/pgadmin:/var/lib/pgadmin
+    env_file:
+      - ../stack.env
