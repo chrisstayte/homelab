@@ -7,8 +7,8 @@ services:
     restart: always
     volumes:
       - /server/plausible/db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=postgres
+    env_file:
+      - ../stack.env
     healthcheck:
       test: pg_isready
       start_interval: 2s
