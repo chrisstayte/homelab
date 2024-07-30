@@ -2,5 +2,7 @@ services:
   drizzle_studio:
     container_name: drizzle-studio
     image: ghcr.io/drizzle-team/gateway:0.0.17
+    ports:
+      - '4983:4983'
     volumes:
       - /server/drizzle-studio:/app
