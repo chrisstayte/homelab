@@ -2,9 +2,5 @@ services:
   drizzle_studio:
     container_name: drizzle-studio
     image: ghcr.io/drizzle-team/gateway:0.0.17
-    ports:
-      - "4723:4983"
-    environment:
-      PORT: 4723
     volumes:
       - /server/drizzle-studio:/app
