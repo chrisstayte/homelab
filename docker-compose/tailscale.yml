@@ -6,7 +6,7 @@ services:
     env_file:
       - ../stack.env
     volumes:
-      - /server/tailscale-nginx/state:/var/lib/tailscale
+      - /server/tailscale/state:/var/lib/tailscale
     devices:
       - /dev/net/tun:/dev/net/tun
     cap_add:
