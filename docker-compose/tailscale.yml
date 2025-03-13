@@ -1,0 +1,14 @@
+services:
+  tailscale:
+    image: tailscale/tailscale:latest
+    hostname: homelab
+    env_file:
+      - ../stack.env
+    volumes:
+      - /server/tailscale-nginx/state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped
+    network_mode: host
