@@ -1,5 +1,6 @@
 services:
   tailscale:
+    container_name: tailscale
     image: tailscale/tailscale:latest
     hostname: homelab
     env_file:
