@@ -1,7 +1,15 @@
 services:
   openwebui:
+    container_name: open-webui
     image: ghcr.io/open-webui/open-webui:main
     ports:
       - '3139:8080'
     volumes:
       - /server/open-webui:/app/backend/data
+    # map host.docker.internal → host’s gateway so Ollama calls resolve
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    # disable Ollama integration if you’re not running it locally
+    environment:
+      - OLLAMA_ENABLED=false
+    restart: unless-stopped
