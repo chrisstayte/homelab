@@ -6,6 +6,7 @@ services:
     ports:
       - "8096:8096"
     volumes:
+      - /mnt/unaspro:/library
       - /server/jellyfin/config:/config
       - /server/jellyfin/cache:/cache
       - type: bind
@@ -25,3 +26,4 @@ services:
     # Optional - may be necessary for docker healthcheck to pass if running in host network mode
     extra_hosts:
       - 'host.docker.internal:host-gateway'
+    
